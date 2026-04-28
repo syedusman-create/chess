@@ -1,0 +1,41 @@
+:root{
+  --bg:#0d0f12;
+  --panel:#111317;
+  --accent:#2aa198;
+  --muted:#9aa3ab;
+  --text:#e6eef3;
+}
+*{box-sizing:border-box}
+html,body,#board{height:100%}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;color:var(--text);background:linear-gradient(180deg,#07080a, #0b0c0f);}
+.container{display:flex;min-height:100vh;gap:20px;padding:20px;align-items:center;justify-content:center}
+main{flex:1;display:flex;align-items:center;justify-content:center}
+.board-wrap{width:min(80vmin,600px);height:min(80vmin,600px);background:linear-gradient(180deg,#0f1114,#0b0c0f);padding:10px;border-radius:12px;}
+#board{width:min(80vmin,600px);height:min(80vmin,600px)}
+.sidebar{width:360px;background:var(--panel);padding:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.sidebar h1{margin:0 0 12px 0;font-size:20px}
+.control{margin-bottom:12px}
+.control label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+.control select,.control textarea{width:100%;padding:8px;border-radius:6px;border:1px solid #1b1d20;background:#0b0c0f;color:var(--text)}
+.control textarea{resize:vertical;min-height:92px;font:inherit;line-height:1.35}
+.buttons{display:flex;gap:8px;margin:8px 0}
+.buttons button{flex:1;padding:10px;border-radius:8px;border:none;background:#15171a;color:var(--text);cursor:pointer}
+.buttons button:hover{background:#1f2124}
+.secondary-button{margin-top:8px;width:100%;padding:10px;border-radius:8px;border:1px solid #1b1d20;background:#0f1114;color:var(--text);cursor:pointer}
+.secondary-button:hover{background:#171a1f}
+.info{margin-top:12px;color:var(--muted)}
+.variations{margin-top:16px}
+.variations h3{margin:0 0 6px 0;color:var(--muted)}
+#variationsList{list-style:none;padding:0;margin:0;max-height:200px;overflow:auto}
+#variationsList li{padding:6px;border-radius:6px;background:#0b0c0f;margin-bottom:6px;font-size:14px}
+
+@media (max-width:900px){
+  .container{flex-direction:column;align-items:stretch;padding:12px}
+  main{width:100%}
+  .sidebar{width:100%}
+  .board-wrap{width:100%;max-width:640px;height:auto}
+  #board{width:100%;max-width:640px;height:auto}
+}
+
+/* Chessboard.js tweaks */
+.chessboard-1x1-board{box-shadow:none;border-radius:8px}

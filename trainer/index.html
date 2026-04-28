@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chess Trap Trainer</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <main>
+      <div id="board" class="board-wrap"></div>
+    </main>
+    <aside class="sidebar">
+      <h1>Trap Trainer</h1>
+
+      <div class="control">
+        <label for="startFilter">Starts:</label>
+        <select id="startFilter">
+          <option value="all">All</option>
+        </select>
+      </div>
+
+      <div class="control">
+        <label for="winnerFilter">Winner:</label>
+        <select id="winnerFilter">
+          <option value="all">All</option>
+          <!-- options populated from data -->
+        </select>
+      </div>
+
+      <div class="control">
+        <label for="trapSelect">Select Trap</label>
+        <select id="trapSelect"></select>
+      </div>
+
+      <div class="control">
+        <label for="manualMoves">Enter Moves</label>
+        <textarea id="manualMoves" rows="5" placeholder="Paste SAN moves here, e.g. 1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5"></textarea>
+        <button id="loadMoves" class="secondary-button">Load Moves</button>
+      </div>
+
+      <div class="buttons">
+        <button id="startTrap">Start Trap</button>
+        <button id="prevMove">Previous Step</button>
+        <button id="nextMove">Next Move</button>
+        <button id="reset">Reset</button>
+      </div>
+
+      <div class="info">
+        <div><strong>Trap:</strong> <span id="trapName">-</span></div>
+        <div><strong>Move:</strong> <span id="moveNumber">0</span></div>
+      </div>
+
+      <div class="variations">
+        <h3>Variations</h3>
+        <ul id="variationsList"></ul>
+      </div>
+    </aside>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
